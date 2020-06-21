@@ -50,6 +50,8 @@ impl ThreadPool {
   }
 
   pub fn wait(self) {
+    // @todo - this doesn't __really__ work, it just waits
+    // forever
     while self.wait.load(Ordering::SeqCst) != 0 {
       println!("Processing");
     }
